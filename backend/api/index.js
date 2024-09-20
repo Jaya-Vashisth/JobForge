@@ -17,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 import connectDB from "../utils/db.js";
+import { User } from "../models/userModel.js";
 
 const corsOption = {
   origin: "http://localhost:5173",
@@ -31,7 +32,10 @@ app.get("/", (req, res) => {
 
 app.get("/test-connect", async (req, res) => {
   connectDB();
-  res.json({ message: "connection" });
+  const user = await User.find();
+  console.log(user);
+
+  res.json({ message: "connection", user });
 });
 
 app.use("/api/v1/user", userRoute);
