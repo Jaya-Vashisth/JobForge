@@ -9,13 +9,13 @@ export const register = async (req, res) => {
   //check any filled is empty
   try {
     const { fullname, email, phoneNumber, password, role } = req.body;
-    const file = req.file;
+    // const file = req.file;
 
-    console.log(file);
-    const fileURI = getDataUri(file);
-    console.log(fileURI);
-    const cloudResponse = await cloudinary.uploader.upload(fileURI.content);
-    console.log(cloudResponse);
+    // console.log(file);
+    // const fileURI = getDataUri(file);
+    // console.log(fileURI);
+    // const cloudResponse = await cloudinary.uploader.upload(fileURI.content);
+    // console.log(cloudResponse);
 
     // console.log(req.body);
     if (!fullname || !email || !phoneNumber || !password || !role) {
@@ -46,7 +46,7 @@ export const register = async (req, res) => {
       phoneNumber,
       password: hashedPassword,
       role,
-      profile: { profilePhoto: cloudResponse.secure_url },
+      // profile: { profilePhoto: cloudResponse.secure_url },
     });
 
     newUser.password = undefined;
