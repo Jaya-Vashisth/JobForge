@@ -6,6 +6,7 @@ import userRoute from "../routers/userRoutes.js";
 import companyRoute from "../routers/companyRoutes.js";
 import jobRoute from "../routers/jobRoutes.js";
 import applicationRoute from "../routers/applicationRoutes.js";
+import mongoose from "mongoose";
 dotenv.config({});
 
 const app = express();
