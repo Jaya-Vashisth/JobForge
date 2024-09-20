@@ -2,19 +2,15 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
   try {
-    await mongoose
-      .connect(process.env.DATABASE, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      })
-      .then(() => {
-        console.log("Connected to the database");
-      })
-      .catch((error) => {
-        console.error("Error connecting to the database", error);
-      });
+    await mongoose.connect(process.env.MONGO_URI, {
+      //these are just to get rid of warnings
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log("Database Connected");
   } catch (error) {
-    console.error("Error connecting to the database", error);
+    console.log(error.message);
+    process.exit(1);
   }
 };
 
