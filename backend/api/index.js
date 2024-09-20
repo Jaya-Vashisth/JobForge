@@ -31,6 +31,7 @@ app.get("/", (req, res) => {
 
 app.get("/test-con", async (req, res) => {
   connectDB();
+  res.json({ message: "connection" });
 });
 
 app.use("/api/v1/user", userRoute);
