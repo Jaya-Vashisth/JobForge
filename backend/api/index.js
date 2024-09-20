@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to JobForge backend!");
 });
 
-app.get("/test-con", async (req, res) => {
+app.get("/test-connect", async (req, res) => {
   connectDB();
   res.json({ message: "connection" });
 });
