@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to JobForge backend!");
 });
 
-app.get("/test-db", async (req, res) => {
+app.get("/test-con", async (req, res) => {
   try {
     const isConnected = await mongoose.connection.readyState;
     if (isConnected) {
