@@ -30,20 +30,9 @@ app.get("/", (req, res) => {
 });
 
 app.get("/test-con", async (req, res) => {
-  try {
-    const isConnected = await mongoose.connection.readyState;
-    if (isConnected) {
-      return res.json({ message: "Database connected successfully" });
-    } else {
-      return res.json({ message: "Database not connected" });
-    }
-  } catch (error) {
-    return res.json({
-      message: "Error connecting to database",
-      error: error.message,
-    });
-  }
+  connectDB();
 });
+
 app.use("/api/v1/user", userRoute);
 app.use("/api/vi/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
@@ -57,6 +46,8 @@ app.use("/api/v1/application", applicationRoute);
 // });
 
 app.listen(PORT, () => {
-  connectDB();
+  // connectDB();
   console.log(`Server listening on Port ${PORT}`);
 });
+
+// connectDB();
