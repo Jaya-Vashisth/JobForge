@@ -53,6 +53,7 @@ export const postJob = async (req, res) => {
       success: true,
     });
   } catch (error) {
+    res.status(500).json({ message: error, success: false });
     console.log(error);
   }
 };
@@ -82,7 +83,10 @@ export const getAllJobs = async (req, res) => {
       jobs,
       success: true,
     });
-  } catch (error) {}
+  } catch (error) {
+    res.status(500).json({ message: error, success: false });
+    console.log(error);
+  }
 };
 
 //get job by id
@@ -104,6 +108,7 @@ export const getJobById = async (req, res) => {
       success: true,
     });
   } catch (error) {
+    res.status(500).json({ message: error, success: false });
     console.log(error);
   }
 };
@@ -127,6 +132,7 @@ export const getRecJobs = async (req, res) => {
       success: true,
     });
   } catch (error) {
+    res.status(500).json({ message: error, success: false });
     console.log(error);
   }
 };
