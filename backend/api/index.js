@@ -21,7 +21,7 @@ import connectDB from "../utils/db.js";
 import { User } from "../models/userModel.js";
 
 const corsOption = {
-  origin: "http://localhost:5173",
+  origin: "https://job-forge-frontend.vercel.app",
   credentials: true,
 };
 app.use(cors(corsOption));
