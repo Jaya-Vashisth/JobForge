@@ -2,7 +2,7 @@
 
 ## Overview
 
-**JobForge** is a full-stack job portal web application built using the MERN stack (MongoDB, Express, React, Node.js) that allows users and recruiters to create profiles, post and apply for jobs, upload resumes, and manage the application process with real-time status updates. It's designed as a personal project to showcase my skills in building robust and user-friendly web applications.
+**JobForge** is a full-stack job portal web application built using the MERN stack (MongoDB, Express, React, Node.js) that allows users and recruiters to create profiles, post and apply for jobs, upload resumes, and manage the application process with real-time status updates. 
 
 ---
 
