@@ -7,6 +7,8 @@ import companyRoute from "../routers/companyRoutes.js";
 import jobRoute from "../routers/jobRoutes.js";
 import applicationRoute from "../routers/applicationRoutes.js";
 import mongoose from "mongoose";
+import connectDB from "../utils/db.js";
+import { User } from "../models/userModel.js";
 
 dotenv.config({});
 
@@ -17,14 +19,13 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-import connectDB from "../utils/db.js";
-import { User } from "../models/userModel.js";
-
 const corsOption = {
   origin: 'https://job-forge-frontend.vercel.app',
   credentials: true,
 };
-app.use(cors());
+app.use(cors(corsOption));
+
+
 
 //API's routes
 app.get("/", (req, res) => {
