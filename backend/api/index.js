@@ -24,7 +24,7 @@ const corsOption = {
   origin: 'https://job-forge-frontend.vercel.app',
   credentials: true,
 };
-app.use(cors(corsOption));
+app.use(cors());
 
 //API's routes
 app.get("/", (req, res) => {
