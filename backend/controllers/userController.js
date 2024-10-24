@@ -107,7 +107,7 @@ export const login = async (req, res) => {
 
     //generate token
     const token = generateToken(user._id);
-
+    console.log(token);
     user.password = undefined;
 
     //send response to server
@@ -122,6 +122,7 @@ export const login = async (req, res) => {
         user: user,
         message: `Welcome back ${user.fullname}`,
         success: true,
+        token:token,
       });
   } catch (err) {
     console.log(err);
