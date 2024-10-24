@@ -46,7 +46,7 @@ export const register = async (req, res) => {
       phoneNumber,
       password: hashedPassword,
       role,
-      // profile: { profilePhoto: cloudResponse.secure_url },
+      profile: { profilePhoto: cloudResponse.secure_url },
     });
 
     newUser.password = undefined;
@@ -116,7 +116,7 @@ export const login = async (req, res) => {
       .cookie("token", token, {
         maxAge: 1 * 24 * 60 * 60 * 1000,
         httpOnly: true,
-        sameSite: "strict",
+        sameSite: "none",
       })
       .json({
         user: user,
