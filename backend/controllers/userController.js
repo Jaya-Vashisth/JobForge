@@ -122,7 +122,7 @@ export const login = async (req, res) => {
         user: user,
         message: `Welcome back ${user.fullname}`,
         success: true,
-        token:token,
+       
       });
   } catch (err) {
     console.log(err);
