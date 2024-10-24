@@ -51,6 +51,7 @@ const Login = () => {
       //if created successfully
       if (res.data.success) {
         dispatch(setUser(res.data.user));
+        console.log(res.token);
         navigate("/");
         toast.success(res.data.message);
       }
