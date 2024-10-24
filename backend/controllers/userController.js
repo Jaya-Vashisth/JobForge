@@ -9,12 +9,12 @@ export const register = async (req, res) => {
   //check any filled is empty
   try {
     const { fullname, email, phoneNumber, password, role } = req.body;
-    // const file = req.file;
+    const file = req.file;
 
     // console.log(file);
-    // const fileURI = getDataUri(file);
+    const fileURI = getDataUri(file);
     // console.log(fileURI);
-    // const cloudResponse = await cloudinary.uploader.upload(fileURI.content);
+    const cloudResponse = await cloudinary.uploader.upload(fileURI.content);
     // console.log(cloudResponse);
 
     // console.log(req.body);
