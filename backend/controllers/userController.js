@@ -117,7 +117,7 @@ export const login = async (req, res) => {
         maxAge: 1 * 24 * 60 * 60 * 1000,
         httpOnly: true,
         sameSite: "none",
-        domain: ".vercel.app",
+        secure: true
       })
       .json({
         user: user,
