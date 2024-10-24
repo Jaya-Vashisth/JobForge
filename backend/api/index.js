@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOption = {
   origin: 'https://job-forge-frontend.vercel.app',
-  methods: "GET,HEAD,PUT,OPTIONS,POST,DELETE,PATCH",
+  methods: "GET,HEAD,PUT,OPTIONS,POST,DELETE",
   allowedHeaders: [
     "Access-Control-Allow-Headers",
     "Origin",
